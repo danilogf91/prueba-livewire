@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
+use App\Http\Livewire\ProjectCrud;
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,4 +13,14 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+    // Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('show');
+
+    // Route::get('/users', [ProjectController::class, 'index'])->name('users');
+
+    // Route::get('/projects', ProjectCrud::class);
+
+    // Route::resource('/projects', ProjectController::class);
+    Route::post('/data', [DataController::class, 'create']);
 });

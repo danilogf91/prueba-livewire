@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\DataResource;
 use App\Models\Data;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class DataController extends Controller
      */
     public function index()
     {
-        //
+        return DataResource::collection(Data::query()->orderBy('id', 'desc')->paginate(100));
     }
 
     /**
