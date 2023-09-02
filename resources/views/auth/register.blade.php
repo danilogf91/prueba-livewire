@@ -2,8 +2,7 @@
     <x-authentication-card>
         <x-slot name="logo">
             {{-- <x-authentication-card-logo /> --}}
-            <x-heroicon-o-user-circle class="w-20 h-20"/>
-
+            <x-heroicon-o-user-circle class="w-20 h-20 text-slate-400"/>
         </x-slot>
 
         <x-validation-errors class="mb-4" />

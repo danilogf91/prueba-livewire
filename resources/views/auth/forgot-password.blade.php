@@ -2,7 +2,7 @@
     <x-authentication-card>
         <x-slot name="logo">
             {{-- <x-authentication-card-logo /> --}}
-            <x-heroicon-o-user-circle class="w-20 h-20"/>
+            <x-heroicon-o-user-circle class="w-20 h-20 text-slate-400"/>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
@@ -31,5 +31,15 @@
                 </x-button>
             </div>
         </form>
+
+        <div class="flex items-center justify-start gap-4 mt-4">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                {{ __('Register') }}
+            </a>
+
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                {{ __('Login') }}
+            </a>
+        </div>
     </x-authentication-card>
 </x-guest-layout>
